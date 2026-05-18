@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://python.org)
 [![Model](https://img.shields.io/badge/model-Gemma%204%20E4B-orange)](https://ai.google.dev/gemma)
-[![DEV Challenge](https://img.shields.io/badge/DEV.to-Gemma%204%20Challenge-black)](https://dev.to/challenges/gemma-4)
+
 
 ---
 
