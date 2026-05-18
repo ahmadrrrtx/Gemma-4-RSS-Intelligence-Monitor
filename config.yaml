@@ -1,0 +1,138 @@
+# ═══════════════════════════════════════════════════════════════
+# Gemma 4 RSS Intelligence Monitor — Configuration
+# ═══════════════════════════════════════════════════════════════
+#
+# Model: gemma4:e4b  (Edge 4B — ideal for CPU-only VPS)
+# - 128K context window handles large feed batches
+# - ~2.5 GB RAM quantized — fits on a $7 Hetzner CPX21
+# - Reasoning mode enabled via low temperature
+# - Multimodal capable (text + vision)
+#
+# To use larger models (if you have more RAM):
+#   gemma4:26b   — MoE, needs ~14GB RAM, near-31B quality
+#   gemma4:31b   — Dense flagship, needs ~20GB RAM
+
+# ─────────────────────────────────────────────
+# Gemma 4 Settings
+# ─────────────────────────────────────────────
+gemma4:
+  model: "gemma4:e4b"
+  host: "http://localhost:11434"
+
+# ─────────────────────────────────────────────
+# Monitoring Settings
+# ─────────────────────────────────────────────
+monitoring:
+  hours_back: 6               # How far back to look in feeds
+  max_items_per_feed: 15      # Cap per feed to control context size
+
+# ─────────────────────────────────────────────
+# Slack Settings
+# Get webhook: https://api.slack.com/messaging/webhooks
+# Leave blank or as-is to print to console instead
+# ─────────────────────────────────────────────
+slack:
+  webhook_url: "YOUR_SLACK_WEBHOOK_HERE"
+  channel: "#dev-digest"
+  username: "Gemma4 Intelligence"
+
+# ─────────────────────────────────────────────
+# RSS Feeds
+# ─────────────────────────────────────────────
+feeds:
+
+  # ── Programming Languages ──────────────────
+  - url: "https://blog.rust-lang.org/feed.xml"
+    name: "Rust Blog"
+
+  - url: "https://go.dev/blog/feed.atom"
+    name: "Go Blog"
+
+  - url: "https://blog.python.org/feeds/posts/default"
+    name: "Python Blog"
+
+  - url: "https://nodejs.org/en/feed/blog.xml"
+    name: "Node.js Blog"
+
+  # ── Security ───────────────────────────────
+  - url: "https://github.blog/category/security/feed/"
+    name: "GitHub Security"
+
+  - url: "https://feeds.feedburner.com/TheHackersNews"
+    name: "The Hacker News"
+
+  # ── Web Frameworks ─────────────────────────
+  - url: "https://github.com/django/django/releases.atom"
+    name: "Django Releases"
+
+  - url: "https://github.com/rails/rails/releases.atom"
+    name: "Rails Releases"
+
+  - url: "https://github.com/fastapi/fastapi/releases.atom"
+    name: "FastAPI Releases"
+
+  - url: "https://github.com/expressjs/express/releases.atom"
+    name: "Express.js Releases"
+
+  # ── Frontend ───────────────────────────────
+  - url: "https://github.com/facebook/react/releases.atom"
+    name: "React Releases"
+
+  - url: "https://github.com/vuejs/core/releases.atom"
+    name: "Vue.js Releases"
+
+  - url: "https://github.com/sveltejs/svelte/releases.atom"
+    name: "Svelte Releases"
+
+  - url: "https://github.com/angular/angular/releases.atom"
+    name: "Angular Releases"
+
+  # ── DevOps & Infrastructure ────────────────
+  - url: "https://github.com/kubernetes/kubernetes/releases.atom"
+    name: "Kubernetes Releases"
+
+  - url: "https://github.com/docker/compose/releases.atom"
+    name: "Docker Compose Releases"
+
+  - url: "https://github.com/hashicorp/terraform/releases.atom"
+    name: "Terraform Releases"
+
+  - url: "https://github.com/helm/helm/releases.atom"
+    name: "Helm Releases"
+
+  # ── Databases ──────────────────────────────
+  - url: "https://www.postgresql.org/news.rss"
+    name: "PostgreSQL News"
+
+  - url: "https://github.com/redis/redis/releases.atom"
+    name: "Redis Releases"
+
+  - url: "https://github.com/mongodb/mongo/releases.atom"
+    name: "MongoDB Releases"
+
+  # ── AI/ML ──────────────────────────────────
+  - url: "https://github.com/huggingface/transformers/releases.atom"
+    name: "HuggingFace Transformers"
+
+  - url: "https://openai.com/news/rss.xml"
+    name: "OpenAI Blog"
+
+  - url: "https://blog.google/technology/ai/rss/"
+    name: "Google AI Blog"
+
+  # ── Cloud Providers ────────────────────────
+  - url: "https://aws.amazon.com/blogs/aws/feed/"
+    name: "AWS Blog"
+
+  - url: "https://cloud.google.com/blog/rss"
+    name: "Google Cloud Blog"
+
+  # ── Developer Tools ────────────────────────
+  - url: "https://github.com/neovim/neovim/releases.atom"
+    name: "Neovim Releases"
+
+  - url: "https://github.com/microsoft/vscode/releases.atom"
+    name: "VSCode Releases"
+
+  - url: "https://code.visualstudio.com/updates/rss.xml"
+    name: "VSCode Updates"
