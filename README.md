@@ -388,7 +388,7 @@ Since it's running locally at zero marginal cost, there's no reason to be conser
 
 ## License
 
-Apache 2.0 — same as Gemma 4 itself. Use it for anything.
+Apache 2.0 — same as Gemma 4 itself. Use it for anything or we can say almost for anything .
 
 ---
 
